@@ -22,14 +22,6 @@
 
 typedef std::int64_t my_ptrdiff;
 typedef std::uint64_t my_uintptr;
-static_assert(sizeof(my_ptrdiff) == sizeof(my_uintptr),
-              "These types must be the same size - the largest "
-              "possible pointer size on a given platform that you want "
-              "to interoperate!");
-static_assert(sizeof(my_ptrdiff) >= sizeof(std::ptrdiff_t),
-              "my_ptrdiff must be at least as big as ptrdiff_t!");
-static_assert(sizeof(my_uintptr) >= sizeof(std::uintptr_t),
-              "my_uintptr must be at least as big as uintptr_t!");
 
 #ifdef WANT_TO_SEE_MSVC2015_2RC_NOT_BUILD
 template <typename T>
