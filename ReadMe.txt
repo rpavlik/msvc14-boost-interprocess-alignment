@@ -12,6 +12,8 @@ Note that the code that doesn't build here, builds fine in VS 2013, as well as G
 
 This is the minimum Boost IPC consuming code to exhibit this.
 
+(Note: I tried to build with clang/c2, but it was wholly unsatisfying, presumably because Boost isn't ready to deal with clang/c2: lots of ignored pragmas and references to intrinsics, and the errors that are fatal are "can't mangle this C11 atomic type yet" in boost\smart_ptr\detail\sp_counted_base_clang.hpp - so sorry, not sure if it's front-end or back-end or, perhaps, a latent bug in usage.)
+
 1>------ Build started: Project: BoostIPCSample, Configuration: Release Win32 ------
 1>  BoostIPCSample.cpp
 1>C:\local\boost_1_60_0\boost/intrusive/detail/bstree_algorithms_base.hpp(97): error C2719: 'node': formal parameter with requested alignment of 8 won't be aligned
